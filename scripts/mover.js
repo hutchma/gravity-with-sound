@@ -30,7 +30,7 @@ class Mover {
     this.velocity.add(this.acceleration);
     this.position.add(this.velocity);
     this.acceleration.mult(0);
-    this.osc.frequency.value = maxFreq / divisions * this.velocity.mag() * 10 / this.mass;
+    this.osc.frequency.value = maxFreq / divisions * this.velocity.mag() * this.mass / 5000;
   }
   
   // Newton's 2nd Law

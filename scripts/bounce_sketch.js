@@ -11,6 +11,12 @@ var movers,
     selectedMover = false,
     visible = false;
 
+var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+var gainNode = audioCtx.createGain();
+gainNode.connect(audioCtx.destination);
+gainNode.gain.value = 0.5;
+var maxFreq = 6000;
+var divisions = 1/10;
 
 function createInputs() {
   Object.keys(CONFIG).map(function(key, i) {
